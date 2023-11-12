@@ -1,17 +1,23 @@
 package metier;
-
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlTransient;
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+    
 public class Compte {
 
     int code;
     int solde;
-    String dateCreation;
+    @XmlTransient
+    private Date dateCreation = new Date();
 
 
     public Compte(){
 
     }
 
-    public Compte(int code, int solde, String dateCreation) {
+    public Compte(int code, int solde, Date dateCreation) {
         this.code = code;
         this.solde = solde;
         this.dateCreation = dateCreation;
@@ -37,7 +43,7 @@ public class Compte {
         return dateCreation;
     }
 
-    public void setDateCreation(String dateCreation) {
+    public void setDateCreation(Date dateCreation) {
         this.dateCreation = dateCreation;
     }
 

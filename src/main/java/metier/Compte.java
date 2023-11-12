@@ -39,7 +39,7 @@ public class Compte {
         this.solde = solde;
     }
 
-    public String getDateCreation() {
+    public Date getDateCreation() {
         return dateCreation;
     }
 
